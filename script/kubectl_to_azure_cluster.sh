@@ -1,0 +1,1 @@
+az aks get-credentials --resource-group mikes-demo-resource-group --name mikes-kube-cluster

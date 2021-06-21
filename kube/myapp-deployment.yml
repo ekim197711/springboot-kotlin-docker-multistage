@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+  labels:
+    app: myapp-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: myapp-sb
+          imagePullPolicy: IfNotPresent
+          image: mikesimages.azurecr.io/springapp:latest
+          ports:
+            - containerPort: 8080
